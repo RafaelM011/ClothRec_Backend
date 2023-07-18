@@ -1,6 +1,7 @@
 const requestClarifai = (req, res) => {
 
 const { IMAGE_URL } = req.body;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // In this section, we set the user authentication, user and app ID, model details, and the URL
 // of the image we want as an input. Change these strings to run your own example.
