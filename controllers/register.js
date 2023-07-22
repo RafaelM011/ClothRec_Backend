@@ -12,10 +12,10 @@ export const register = (db, bcrypt) => (req, res) => {
           .into('login')
           .returning('*')
           .then(response => res.status(200).json(response[0]))
-          .catch(err => res.status(400).json(err))
+          .catch(() => res.status(400).json('Username or email already exist'))
       })
       .then(trx.commit)
       .catch(trx.rollback)
   })
-    .catch(err => res.status(400).json(err))
+    .catch(() => res.status(400).json('Username or email already exist'))
 }
